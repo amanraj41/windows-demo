@@ -1,0 +1,24 @@
+{
+  "name": "C/C++ Windows Cross-Dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/codespaces-cpp:1": {},
+    "ghcr.io/devcontainers/features/mingw-w64:1": {}
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y mingw-w64",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "C_Cpp.default.compilerPath": "/usr/bin/x86_64-w64-mingw32-gcc",
+        "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
+        "C_Cpp.default.includePath": [
+          "${workspaceFolder}/**",
+          "/usr/x86_64-w64-mingw32/include"
+        ]
+      },
+      "extensions": [
+        "ms-vscode.cpptools"
+      ]
+    }
+  }
+}

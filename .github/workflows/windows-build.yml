@@ -1,0 +1,28 @@
+name: Build Windows App
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up MinGW
+        run: choco install mingw
+
+      - name: Build Windows app
+        run: gcc -mwindows -o hello.exe main.c
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-app
+          path: hello.exe

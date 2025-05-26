@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "Codespaces MinGW-w64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/usr/x86_64-w64-mingw32/include"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/x86_64-w64-mingw32-gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ],
+  "version": 4
+}
